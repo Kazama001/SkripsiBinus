@@ -76,16 +76,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
   m_Name: SplitToning
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   shadows:
     m_OverrideState: 1
     m_Value: {r: 0, g: 0, b: 0, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0.5333593, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.97547174, b: 0.97547174, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 8
 --- !u!114 &3187786803458819287
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
     m_Value: 1
@@ -117,7 +117,7 @@ MonoBehaviour:
   active: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.24528301, g: 0, b: 0, a: 1}
+    m_Value: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   center:
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
@@ -142,19 +142,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   postExposure:
     m_OverrideState: 1
     m_Value: 0.16
   contrast:
     m_OverrideState: 1
-    m_Value: 38
+    m_Value: 64
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 0.010401976, g: 0.081729814, b: 0.063897856, a: 1}
   hueShift:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: -78
+    m_Value: -85
