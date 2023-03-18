@@ -48,7 +48,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BaseScale: 0.05
-    - _BaseSpeed: 1
+    - _BaseSpeed: 5
     - _BaseStrength: 4
     - _CurvatureRadius: 2000
     - _EmissionStrength: 0.09
