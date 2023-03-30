@@ -2533,7 +2533,7 @@ MonoBehaviour:
       slotIndex: 0
   m_OutputFlowSlot:
   - link: []
-  blendMode: 1
+  blendMode: 0
   useAlphaClipping: 0
   generateMotionVector: 0
   excludeFromTAA: 0
@@ -2868,7 +2868,7 @@ MonoBehaviour:
   attribute: color
   Composition: 0
   AlphaComposition: 0
-  SampleMode: 0
+  SampleMode: 2
   Mode: 1
   ColorMode: 3
   channels: 6
