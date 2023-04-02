@@ -48,24 +48,24 @@ Material:
     m_Ints: []
     m_Floats:
     - _BaseScale: 0.05
-    - _BaseSpeed: 5
+    - _BaseSpeed: 2
     - _BaseStrength: 4
     - _CurvatureRadius: 2000
     - _EmissionStrength: 0.09
-    - _FadeDepth: 63.1
+    - _FadeDepth: 50
     - _FresnelOpacity: 10
     - _FresnelPower: 4.06
-    - _NoiseEdgeOne: 55.35
-    - _NoiseEdgeTwo: 2
-    - _NoiseHeight: 25
-    - _NoisePower: 44.92
-    - _NoiseScale: 200
-    - _NoiseSpeed: 1
+    - _NoiseEdgeOne: 21.88
+    - _NoiseEdgeTwo: 21.9
+    - _NoiseHeight: 13.93
+    - _NoisePower: 56.08
+    - _NoiseScale: 10
+    - _NoiseSpeed: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _ColorPeak: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorPeak: {r: 1, g: 1, b: 1, a: 0.98039216}
     - _ColorValley: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseRemap: {r: 50, g: 220, b: 10, a: 20}
-    - _RotateProjection: {r: 1, g: 0, b: 0, a: 90}
+    - _RotateProjection: {r: 0.57, g: 0, b: 0, a: 90}
   m_BuildTextureStacks: []
