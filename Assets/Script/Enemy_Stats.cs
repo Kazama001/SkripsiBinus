@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 public class Enemy_Stats : MonoBehaviour
 {
-    [SerializeField] private int Enemy_MaxHP, Enemy_CurrentHP, Enemy_Atk, Enemy_Def;
+    public int Enemy_MaxHP, Enemy_CurrentHP, Enemy_Atk, Enemy_Def;
     [SerializeField] private int Enemy_BaseHP, Enemy_BaseAtk, Enemy_BaseDef;
     [SerializeField] private float Enemy_Area;
     [SerializeField] private float Enemy_Stage;
@@ -18,15 +18,15 @@ public class Enemy_Stats : MonoBehaviour
     private void Start()
     {
         instance = this;
-        Enemy_BaseHP = 10;
-        Enemy_BaseAtk = 5;
-        Enemy_BaseDef = 2;
+        Enemy_BaseHP = 100;
+        Enemy_BaseAtk = 10;
+        Enemy_BaseDef = 5;
         
-        Enemy_Area = 1.1f;
-        Enemy_Stage = 1.2f;
+        Enemy_Area = 1;
+        Enemy_Stage = 1;
         status();
         
-        Enemy_CurrentHP = 15;
+        Enemy_CurrentHP = Enemy_MaxHP;
         /*
         Enemy_HP   = 100   + Enemy_HP_Shop    * 2;
         Enemy_Atk  = 10    + Enemy_Atk_Shop   * 2;
@@ -51,9 +51,28 @@ public class Enemy_Stats : MonoBehaviour
         Text_Def.text = Enemy_Def.ToString();
     }
 
-    public void DealDamage(int Enemy_Atk)
+    public void TakeDamage(int Amount)
     {
-
+        Enemy_CurrentHP -= Amount - Enemy_Def;
     }
-
+    public void TakeDamagePierced(int Amount)
+    {
+        Enemy_CurrentHP -= (int)(Amount - (Enemy_Def * 0.5));
+    }
+    public void DealDamage(GameObject target)
+    {
+        var stats = target.GetComponent<Player_Stats>();
+        if (stats != null)
+        {
+            stats.TakeDamage(Enemy_Atk);
+        }
+    }
+    public void DealDamageBlocked(GameObject target)
+    {
+        var stats = target.GetComponent<Player_Stats>();
+        if (stats != null)
+        {
+            stats.TakeDamageBlocked(Enemy_Atk);
+        }
+    }
 }
