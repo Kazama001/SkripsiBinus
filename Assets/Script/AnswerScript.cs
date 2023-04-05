@@ -6,19 +6,36 @@ public class AnswerScript : MonoBehaviour
 {
     public bool IsCorrect = false;
     public Manager Manager;
-    public Player_Stats player_Stats;
+    public BattleScript battlescript;
 
     public void Answer()
     {
-        if (IsCorrect)
+        if (battlescript.Turn == "Player")
         {
-            Debug.Log("Benar");
-            Manager.Correct();
+            if (IsCorrect)
+            {
+                battlescript.Player_Correct();
+                Manager.Correct();
+            }
+            else
+            {
+                battlescript.Player_Wrong();
+                Manager.Correct();
+
+            }
         }
-        else
+        else if (battlescript.Turn == "Enemy")
         {
-            Debug.Log("Salah");
-            Manager.Correct();
+            if (IsCorrect)
+            {
+                battlescript.Enemy_Correct();
+                Manager.Correct();
+            }
+            else
+            {
+                battlescript.Enemy_Wrong();
+                Manager.Correct();
+            }
         }
     }
 
