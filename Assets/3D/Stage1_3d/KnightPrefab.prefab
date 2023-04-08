@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd5dc5e03d174e349b17482b64d107a2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd5dc5e03d174e349b17482b64d107a2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd5dc5e03d174e349b17482b64d107a2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cd5dc5e03d174e349b17482b64d107a2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Standing Block Idle
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: cd5dc5e03d174e349b17482b64d107a2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2927a262faaac6b4ea44adc8a5ebac1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd5dc5e03d174e349b17482b64d107a2, type: 3}
 --- !u!4 &7968258693933555844 stripped
