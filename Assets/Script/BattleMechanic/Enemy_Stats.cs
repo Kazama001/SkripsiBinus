@@ -75,4 +75,9 @@ public class Enemy_Stats : MonoBehaviour
             stats.TakeDamageBlocked(Enemy_Atk);
         }
     }
+
+    public void enemydead()
+    {
+
+    }
 }
