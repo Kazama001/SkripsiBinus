@@ -6,13 +6,17 @@ using TMPro;
 public class Manager : MonoBehaviour
 {
     public List<QuestionAndAnswer> QnA;
+    public QuestionAndAnswerList manager = new QuestionAndAnswerList();
     public GameObject[] Options;
     public int CurrentQuestion;
+    public List<string> pertanyaanBaru;
 
     public TextMeshProUGUI QuestionTxt;
+    public TextAsset jsonText;
 
     private void Start()
     {
+        manager = JsonUtility.FromJson<QuestionAndAnswerList>(jsonText.text);
         GenerateQuestion();
     }
 
@@ -42,7 +46,5 @@ public class Manager : MonoBehaviour
         QuestionTxt.text = QnA[CurrentQuestion].Question;
 
         SetAnswer();
-
     }
-
 }

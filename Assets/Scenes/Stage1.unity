@@ -8520,42 +8520,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73365bb340b398042aacf46f39c040a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QnA:
-  - Question: 1+1
-    Answer:
-    - 4
-    - 3
-    - 2
-    - 1
-    CurrentAnswer: 3
-  - Question: 2 + 2
-    Answer:
-    - 4
-    - 8
-    - 6
-    - 2
-    CurrentAnswer: 1
-  - Question: 3 + 3
-    Answer:
-    - 2
-    - 7
-    - 4
-    - 6
-    CurrentAnswer: 4
-  - Question: 7 x 7
-    Answer:
-    - 36
-    - 49
-    - 64
-    - 81
-    CurrentAnswer: 2
-  - Question: 100 / 10
-    Answer:
-    - 10
-    - 12
-    - 17
-    - 9
-    CurrentAnswer: 1
+  QnA: []
+  manager:
+    QnAList: []
   Options:
   - {fileID: 1144866474}
   - {fileID: 1829433340}
@@ -8563,6 +8530,7 @@ MonoBehaviour:
   - {fileID: 379958269}
   CurrentQuestion: 0
   QuestionTxt: {fileID: 285518495}
+  jsonText: {fileID: 4900000, guid: 6a7d36eadbdf65e46a4083e5fef098e0, type: 3}
 --- !u!1 &1024430928
 GameObject:
   m_ObjectHideFlags: 0
