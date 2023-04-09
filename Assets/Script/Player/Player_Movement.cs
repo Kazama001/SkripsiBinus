@@ -8,13 +8,14 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField]
     private float speed;
-
-
+    public bool battleStart;
     Animator anime;
+    Enemy_Stats enemyscript;
     // Update is called once per frame
 
     private void Start()
     {
+        battleStart = false;
         anime = GetComponent<Animator>();
     }
 
@@ -28,10 +29,12 @@ public class Player_Movement : MonoBehaviour
     {
         if (other.tag == "CubeCollider")
         {
-            print("ada");
+            battleStart = true;
             anime.SetBool("IsIdle", true);
             this.enabled = false;
-            
+            Destroy(other);
+            enemyscript = other.gameObject.GetComponent<Enemy_Stats>();
+            enemyscript.enabled = true;
         }
     }
 }

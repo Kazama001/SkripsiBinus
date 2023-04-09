@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour
 {
+    
     public int Player_MaxHP, Player_CurrentHP, Player_MP, Player_Atk, Player_Def;
     [SerializeField] private int Player_HP_Shop, Player_Atk_Shop, Player_Def_Shop;
     public Slider Player_HPSlider, Player_MPSlider;
