@@ -5,24 +5,41 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public Animator enemyAnimator, playerAnimator;
     [SerializeField]
     private float speed;
     public bool battleStart;
-    Animator anime;
-    Enemy_Stats enemyscript;
+    private string run;
+    [SerializeField] Transform from,to;
     // Update is called once per frame
-
+    private Vector3 targetAngle = new Vector3(0f, -5f, 0f);
+    private Vector3 currentAngle;
     private void Start()
     {
+        currentAngle = transform.eulerAngles;
+        run = "Lurus";
         battleStart = false;
-        anime = GetComponent<Animator>();
+        playerAnimator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
     {
-        transform.position += new Vector3(speed, 0, 0);
+        if (run =="Lurus")
+        {
+            transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
+        }
+        else if(run=="Belok")
+        {
+            currentAngle = new Vector3(
+            0,
+            Mathf.LerpAngle(currentAngle.y, targetAngle.y, speed*Time.deltaTime),
+            0);
 
+            transform.eulerAngles = currentAngle;
+
+            transform.position += new Vector3(0, 0, speed * Time.deltaTime);
+        }
+        
     }
 
     private void OnTriggerEnter(UnityEngine.Collider other)
@@ -30,11 +47,19 @@ public class Player_Movement : MonoBehaviour
         if (other.tag == "CubeCollider")
         {
             battleStart = true;
-            anime.SetBool("IsIdle", true);
+            playerAnimator.SetBool("IsIdle", true);
+            playerAnimator.SetBool("IsRunning", false);
             this.enabled = false;
             Destroy(other);
-            enemyscript = other.gameObject.GetComponent<Enemy_Stats>();
-            enemyscript.enabled = true;
+            other.gameObject.GetComponent<Enemy_Stats>().enabled=true;
+            enemyAnimator = other.transform.parent.GetChild(0).GetComponent<Animator>();
+            BattleScript.instance.getEnemyStats(other.gameObject.GetComponent<Enemy_Stats>());
+        }
+
+        if (other.tag == "CubeTurn")
+        {
+            run = "Belok";
         }
     }
+
 }

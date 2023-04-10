@@ -9,14 +9,22 @@ public class Enemy_Stats : MonoBehaviour
     [SerializeField] private int Enemy_BaseHP, Enemy_BaseAtk, Enemy_BaseDef;
     [SerializeField] private float Enemy_Area;
     [SerializeField] private float Enemy_Stage;
-    public Slider Enemy_HPSlider;
-    public TextMeshProUGUI Text_HP;
-    public TextMeshProUGUI Text_Atk;
-    public TextMeshProUGUI Text_Def;
+    bool isDead;
+    [SerializeField] private Slider Enemy_HPSlider;
+    [SerializeField] private TextMeshProUGUI Text_HP,Text_Atk,Text_Def, Text_Name;
 
     public static Enemy_Stats instance;
-    private void Start()
+
+    
+    private void Awake()
     {
+        print(GameObject.Find("Stats_Enemy").transform.GetChild(0).name);
+        Enemy_HPSlider = GameObject.Find("Stats_Enemy").transform.GetChild(0).GetComponent<Slider>();
+        Text_Atk = GameObject.Find("Stats_Enemy").transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        Text_Def = GameObject.Find("Stats_Enemy").transform.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        Text_HP = GameObject.Find("Stats_Enemy").transform.GetChild(0).transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        Text_Name = GameObject.Find("Stats_Enemy").transform.GetChild(3).GetComponent<TextMeshProUGUI>();
+
         instance = this;
         Enemy_BaseHP = 100;
         Enemy_BaseAtk = 10;
@@ -25,7 +33,9 @@ public class Enemy_Stats : MonoBehaviour
         Enemy_Area = 1;
         Enemy_Stage = 1;
         status();
-        
+
+        Enemy_MaxHP = (int)(Enemy_BaseHP * Enemy_Area * Enemy_Stage);
+
         Enemy_CurrentHP = Enemy_MaxHP;
         /*
         Enemy_HP   = 100   + Enemy_HP_Shop    * 2;
@@ -37,10 +47,16 @@ public class Enemy_Stats : MonoBehaviour
     private void Update()
     {
         status();
+        if (Enemy_CurrentHP <= 0 && !isDead)
+        {
+            StartCoroutine(BattleScript.instance.enemydead());
+            Enemy_CurrentHP = 0;
+            isDead = true;
+        }
     }
     public void status()
     {
-        Enemy_MaxHP = (int)(Enemy_BaseHP * Enemy_Area * Enemy_Stage);
+        
         Text_HP.text = Enemy_CurrentHP.ToString() + "/" + Enemy_MaxHP.ToString();
         Enemy_HPSlider.value = (float)Enemy_CurrentHP / (float)Enemy_MaxHP;
 
@@ -76,8 +92,5 @@ public class Enemy_Stats : MonoBehaviour
         }
     }
 
-    public void enemydead()
-    {
-
-    }
+    
 }
