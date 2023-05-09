@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     private float speed;
     public bool battleStart;
     private string run;
-    [SerializeField] Transform from,to;
+
     // Update is called once per frame
     private Vector3 targetAngle = new Vector3(0f, -5f, 0f);
     private Vector3 currentAngle;
