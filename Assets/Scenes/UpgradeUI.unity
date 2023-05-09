@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: -374}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: -162.3771, y: -178.54288}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &202478119
 MonoBehaviour:
@@ -280,8 +280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: 213}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: 141.00003, y: 85.28284}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216065895
 MonoBehaviour:
@@ -485,10 +485,10 @@ RectTransform:
   m_Father: {fileID: 2009368390}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 1000}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &274084389
 MonoBehaviour:
@@ -679,8 +679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: 213}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: -162.3771, y: 85.28284}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454541518
 MonoBehaviour:
@@ -800,8 +800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: 408}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: -162.3771, y: 172.92511}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &462944563
 MonoBehaviour:
@@ -921,8 +921,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: 1}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: -162.3771, y: -10.000012}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873802339
 MonoBehaviour:
@@ -1042,8 +1042,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: 408}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: 141.00003, y: 172.92511}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &983740912
 MonoBehaviour:
@@ -1163,8 +1163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352, y: -196}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: -162.3771, y: -98.54117}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069889845
 MonoBehaviour:
@@ -1352,8 +1352,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: -374}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: 141.00003, y: -178.54288}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517126454
 MonoBehaviour:
@@ -1473,8 +1473,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: 1}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: 141, y: -10}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1607308619
 MonoBehaviour:
@@ -1594,8 +1594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 323, y: -196}
-  m_SizeDelta: {x: 350, y: 100}
+  m_AnchoredPosition: {x: 141.00003, y: -98.54117}
+  m_SizeDelta: {x: 157.3066, y: 44.9448}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1888014784
 MonoBehaviour:
@@ -1690,6 +1690,7 @@ GameObject:
   - component: {fileID: 1893250958}
   - component: {fileID: 1893250957}
   - component: {fileID: 1893250956}
+  - component: {fileID: 1893250959}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1763,6 +1764,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1893250959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893250955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2009368386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
