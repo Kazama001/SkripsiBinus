@@ -226,9 +226,9 @@ public class GameManager : MonoBehaviour
         costDef *= 1.12f;
     }
 
-    public void Regen(int Amount)
+    public void RegenHP(int Amount)
     {
-        Amount = Char_Regen;
+        Amount += Char_Regen * 5;
     }
     public void RegenUpgrade()
     {
@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviour
 
     public void Timer(int Amount)
     {
-        Amount = 10 + Char_Timer;
+        Amount = 5 + Char_Timer;
     }
     public void TimerUpgrade()
     {

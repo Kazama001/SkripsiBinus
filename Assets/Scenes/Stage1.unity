@@ -13936,7 +13936,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.647
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14312,6 +14312,8 @@ MonoBehaviour:
   - {fileID: 4439899633369113378}
   - {fileID: 4439899632795104630}
   - {fileID: 4439899631935527150}
+  TimerSlider: {fileID: 4439899633727661378}
+  AreaTimer: 0
 --- !u!4 &7311848294692290630
 Transform:
   m_ObjectHideFlags: 0

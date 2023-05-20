@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BattleScript : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     [SerializeField] private Animator enemyAnimator, playerAnimator;
     public Player_Stats playerStats;
     public Enemy_Stats enemyStats;
     public string Turn;
     public Player_Movement player_Movement;
     public GameObject[] gameobject;
-
+    public Slider TimerSlider;
     public static BattleScript instance;
+    public bool TimerActive;
 
+    [SerializeField] private float AreaTimer;
     private void Start()
     {
+        gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
+        TimerSlider.maxValue = 5 + gameManager.Char_Timer - AreaTimer;
+        TimerSlider.value = TimerSlider.maxValue;
         instance = this;
         Turn = "Player";
         gameobject[0].SetActive(false);
@@ -36,12 +42,29 @@ public class BattleScript : MonoBehaviour
             gameobject[2].SetActive(true);
             gameobject[3].SetActive(true);
             player_Movement.battleStart = false;
+            TimerActive = true;
         }
-        
+        if (TimerActive == true)
+        {
+            TimerSlider.value -= Time.deltaTime;
+        }
+
+        if (TimerSlider.value <= 0 && Turn == "Enemy") 
+        {
+            TimerSlider.value = TimerSlider.maxValue;
+            Enemy_Wrong();
+        }
+
+        if (TimerSlider.value <= 0 && Turn == "Player")
+        {
+            TimerSlider.value = TimerSlider.maxValue;
+            Player_Wrong();
+        }
     }
 
     public void Player_Correct()
     {
+        TimerActive = false;
         playerStats.DealDamagePierced(enemyStats.gameObject);
         Turn = "Enemy";
         gameobject[2].SetActive(false);
@@ -53,6 +76,7 @@ public class BattleScript : MonoBehaviour
 
     public void Player_Wrong()
     {
+        TimerActive = false;
         playerStats.DealDamage(enemyStats.gameObject);
         Turn = "Enemy";
         gameobject[2].SetActive(false);
@@ -64,6 +88,7 @@ public class BattleScript : MonoBehaviour
 
     public void Enemy_Correct()
     {
+        TimerActive = false;
         enemyStats.DealDamageBlocked(playerStats.gameObject);
         Turn = "Player";
         gameobject[2].SetActive(false);
@@ -75,6 +100,7 @@ public class BattleScript : MonoBehaviour
 
     public void Enemy_Wrong()
     {
+        TimerActive = false;
         enemyStats.DealDamage(playerStats.gameObject);
         Turn = "Player";
         gameobject[2].SetActive(false);
@@ -88,12 +114,16 @@ public class BattleScript : MonoBehaviour
         yield return new WaitForSeconds(3.5f);
         gameobject[2].SetActive(true);
         gameobject[3].SetActive(true);
+        TimerSlider.value = TimerSlider.maxValue;
+        TimerActive = true;
     }
     IEnumerator EnemyTurn()
     {
         yield return new WaitForSeconds(5);
         gameobject[2].SetActive(true);
         gameobject[4].SetActive(true);
+        TimerSlider.value = TimerSlider.maxValue;
+        TimerActive = true;
     }
 
     IEnumerator EnemyAtkAnimation ()
@@ -112,6 +142,7 @@ public class BattleScript : MonoBehaviour
     public IEnumerator enemydead()
     {
         Turn = "Player";
+        playerStats.Regen();
         yield return new WaitForSeconds(5);
         gameobject[1].SetActive(false);
         gameobject[2].SetActive(false);
@@ -121,6 +152,7 @@ public class BattleScript : MonoBehaviour
         player_Movement.playerAnimator.SetBool("IsRunning", true);
         player_Movement.playerAnimator.SetBool("IsIdle", false);
         enemyStats.enabled = false;
+        TimerActive = false;
     }
 
     public void getEnemyStats(Enemy_Stats enemystats)
@@ -128,5 +160,7 @@ public class BattleScript : MonoBehaviour
         enemyStats = enemystats;
         print(enemystats.gameObject.name);
     }
+
+    
 
 }

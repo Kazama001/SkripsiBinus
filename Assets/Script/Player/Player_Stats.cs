@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour
 {
-
+    public int regenValue;
     [SerializeField] private GameManager gameManager;
-    public int Player_MaxHP, Player_CurrentHP, Player_MP, Player_Atk, Player_Def;
+    public int Player_MaxHP, Player_CurrentHP, Player_MP, Player_Atk, Player_Def, Player_Regen;
     [SerializeField] private int Player_HP_Shop, Player_Atk_Shop, Player_Def_Shop;
     [SerializeField] private float Player_Pierce, Player_Block;
     public Slider Player_HPSlider, Player_MPSlider;
@@ -22,7 +22,8 @@ public class Player_Stats : MonoBehaviour
         Player_HP_Shop = gameManager.Char_HP * 5;
         Player_MaxHP = 100 + Player_HP_Shop;
         Player_CurrentHP = Player_MaxHP;
-        Player_MP = 3;
+
+        Player_Regen = gameManager.Char_Regen * 5;
 
         Player_Atk_Shop = gameManager.Char_Atk * 2;
         Player_Atk = 10 + Player_Atk_Shop;
@@ -39,6 +40,8 @@ public class Player_Stats : MonoBehaviour
         */
     }
 
+
+
     private void Update()
     {
         status();
@@ -46,14 +49,12 @@ public class Player_Stats : MonoBehaviour
 
     public void status()
     {
-        
         Text_HP.text = Player_CurrentHP.ToString() + "/" + Player_MaxHP.ToString();
         Player_HPSlider.value = (float)Player_CurrentHP / (float)Player_MaxHP;
         Text_Gold.text = gameManager.Player_Gold.ToString();
         Text_Atk.text = Player_Atk.ToString();
         Text_Def.text = Player_Def.ToString();
     }
-
 
     public void TakeDamage(int Amount)
     {
@@ -70,6 +71,16 @@ public class Player_Stats : MonoBehaviour
         if (stats != null)
         {
             stats.TakeDamage(Player_Atk);
+        }
+    }
+
+    public void Regen()
+    {
+        Player_CurrentHP += Player_Regen;
+        //gameManager.RegenHP(Player_CurrentHP);
+        if (Player_CurrentHP > Player_MaxHP)
+        {
+            Player_CurrentHP = Player_MaxHP;
         }
     }
 
