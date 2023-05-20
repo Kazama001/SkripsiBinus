@@ -3943,6 +3943,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 119394222760624899, guid: 7e5d9287420a7b24f8819ff9cf4349e8, type: 3}
+      propertyPath: m_Player.loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 119394222760624899, guid: 7e5d9287420a7b24f8819ff9cf4349e8, type: 3}
+      propertyPath: m_Player.play
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 119394222760624899, guid: 7e5d9287420a7b24f8819ff9cf4349e8, type: 3}
+      propertyPath: m_Player.duration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3816662994378229397, guid: 7e5d9287420a7b24f8819ff9cf4349e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

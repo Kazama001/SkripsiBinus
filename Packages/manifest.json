@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.coffee.ui-effect": "https://github.com/mob-sakai/UIEffect.git",
     "com.kink3d.mirrors": "https://github.com/Tokars/kMirrors.git",
     "com.kink3d.shading": "https://github.com/Kink3d/kShading.git#features/kmirrors-support",
     "com.unity.2d.sprite": "1.0.0",
