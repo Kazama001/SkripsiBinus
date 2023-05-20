@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
         costPierce = PlayerPrefs.GetFloat("costPierce", 100);
         costWeakenEnemy = PlayerPrefs.GetFloat("costWeakenEnemy", 300);
     }
-
     void Update()
     {
         ButtonInteractable();
@@ -261,9 +260,10 @@ public class GameManager : MonoBehaviour
         costTimer *= 1.1f;
     }
 
-    public void GoldBonus(float Amount)
+    public void GetGold(int Amount)
     {
-        Amount = 1 + Char_GoldBonus * 0.2f;
+        Player_Gold = Player_Gold + (int)(Amount * (1 + Char_GoldBonus * 0.02f));
+        PlayerPrefs.SetInt("PlayerGold", Player_Gold);
     }
     public void GoldUpgrade()
     {

@@ -5,9 +5,9 @@ using TMPro;
 using UnityEngine.UI;
 public class Enemy_Stats : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     int EnemyHPdown, EnemyAtkDown, EnemyDefDown;
-    public int Enemy_MaxHP, Enemy_CurrentHP, Enemy_Atk, Enemy_Def;
-    [SerializeField] private int Enemy_BaseHP, Enemy_BaseAtk, Enemy_BaseDef;
+    public int Enemy_MaxHP, Enemy_CurrentHP, Enemy_Atk, Enemy_Def, Enemy_GoldValue;
     bool isDead;
     [SerializeField] private Slider Enemy_HPSlider;
     [SerializeField] private TextMeshProUGUI Text_HP,Text_Atk,Text_Def, Text_Name;
@@ -17,9 +17,7 @@ public class Enemy_Stats : MonoBehaviour
     
     private void Awake()
     {
-
-
-        print(GameObject.Find("Stats_Enemy").transform.GetChild(0).name);
+        gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
         Enemy_HPSlider = GameObject.Find("Stats_Enemy").transform.GetChild(0).GetComponent<Slider>();
         Text_Atk = GameObject.Find("Stats_Enemy").transform.GetChild(1).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         Text_Def = GameObject.Find("Stats_Enemy").transform.GetChild(2).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
@@ -27,11 +25,8 @@ public class Enemy_Stats : MonoBehaviour
         Text_Name = GameObject.Find("Stats_Enemy").transform.GetChild(3).GetComponent<TextMeshProUGUI>();
 
         instance = this;
-
-        Enemy_MaxHP = (int)(Enemy_BaseHP);
         Enemy_CurrentHP = Enemy_MaxHP;
-        Enemy_Atk = (int)(Enemy_BaseAtk - EnemyAtkDown);
-        Enemy_Def = (int)(Enemy_BaseDef - EnemyDefDown);
+
 
     }
 
@@ -43,8 +38,11 @@ public class Enemy_Stats : MonoBehaviour
             StartCoroutine(BattleScript.instance.enemydead());
             Enemy_CurrentHP = 0;
             isDead = true;
+            gameManager.GetGold(Enemy_GoldValue);
+            
         }
     }
+
     public void status()
     {
         

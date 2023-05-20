@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour
 {
+
     [SerializeField] private GameManager gameManager;
     public int Player_MaxHP, Player_CurrentHP, Player_MP, Player_Atk, Player_Def;
     [SerializeField] private int Player_HP_Shop, Player_Atk_Shop, Player_Def_Shop;
     [SerializeField] private float Player_Pierce, Player_Block;
     public Slider Player_HPSlider, Player_MPSlider;
-    public TextMeshProUGUI Text_HP;
-    public TextMeshProUGUI Text_Atk;
-    public TextMeshProUGUI Text_Def;
-    
+    public TextMeshProUGUI Text_HP, Text_Def, Text_Atk, Text_Gold;
     private void Start()
     {
         gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
@@ -51,7 +49,7 @@ public class Player_Stats : MonoBehaviour
         
         Text_HP.text = Player_CurrentHP.ToString() + "/" + Player_MaxHP.ToString();
         Player_HPSlider.value = (float)Player_CurrentHP / (float)Player_MaxHP;
-        Player_MPSlider.value = Player_MP;
+        Text_Gold.text = gameManager.Player_Gold.ToString();
         Text_Atk.text = Player_Atk.ToString();
         Text_Def.text = Player_Def.ToString();
     }
