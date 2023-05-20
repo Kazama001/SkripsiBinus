@@ -46,6 +46,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (other.tag == "CubeCollider")
         {
+            print(other.gameObject.name);
             battleStart = true;
             playerAnimator.SetBool("IsIdle", true);
             playerAnimator.SetBool("IsRunning", false);
