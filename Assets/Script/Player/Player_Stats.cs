@@ -28,8 +28,12 @@ public class Player_Stats : MonoBehaviour
         Player_Atk_Shop = gameManager.Char_Atk * 2;
         Player_Atk = 10 + Player_Atk_Shop;
 
+        Player_Pierce = 1 - gameManager.Char_Pierce * 0.01f;
+
         Player_Def_Shop = gameManager.Char_Def;
         Player_Def = 5 + Player_Def_Shop;
+
+        Player_Block = 1 - gameManager.Char_Block * 0.01f;
 
         status();
         
@@ -45,7 +49,16 @@ public class Player_Stats : MonoBehaviour
     private void Update()
     {
         status();
+        if (Player_CurrentHP <= 0)
+        {
+            Player_CurrentHP = 0;
+            //gameManager.ChangeScene("Main_noStart");
+            GameManager.instance.BacktoMain = true;
+            GameManager.instance.ChangeScene("Main_noStart");
+        }
     }
+
+
 
     public void status()
     {
@@ -58,7 +71,10 @@ public class Player_Stats : MonoBehaviour
 
     public void TakeDamage(int Amount)
     {
-        Player_CurrentHP -= Amount - Player_Def;
+        if (Player_Def < Amount)
+        {
+            Player_CurrentHP -= Amount - Player_Def;
+        }
     }
     public void TakeDamageBlocked(int Amount)
     {
@@ -74,6 +90,15 @@ public class Player_Stats : MonoBehaviour
         }
     }
 
+    public void DealDamagePierced(GameObject target)
+    {
+        var stats = target.GetComponent<Enemy_Stats>();
+        if (stats != null)
+        {
+            stats.TakeDamagePierced(Player_Atk,Player_Pierce);
+        }
+    }
+
     public void Regen()
     {
         Player_CurrentHP += Player_Regen;
@@ -84,12 +109,4 @@ public class Player_Stats : MonoBehaviour
         }
     }
 
-    public void DealDamagePierced(GameObject target)
-    {
-        var stats = target.GetComponent<Enemy_Stats>();
-        if (stats != null)
-        {
-            stats.TakeDamagePierced(Player_Atk,Player_Pierce);
-        }
-    }
 }

@@ -14,7 +14,15 @@ public class Enemy_Stats : MonoBehaviour
 
     public static Enemy_Stats instance;
 
-    
+    private void Start()
+    {
+        Enemy_MaxHP = (int)(Enemy_MaxHP * (1 - gameManager.Char_WeakenEnemy * 0.01f));
+        Enemy_CurrentHP = Enemy_MaxHP;
+        Enemy_Atk = (int)(Enemy_Atk * (1 - gameManager.Char_WeakenEnemy * 0.01f));
+        Enemy_Def = (int)(Enemy_Def * (1 - gameManager.Char_WeakenEnemy * 0.01f));
+        Enemy_GoldValue = (int)(Enemy_GoldValue * (1 + gameManager.Char_GoldBonus * 0.05f));
+    }
+
     private void Awake()
     {
         gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
@@ -25,9 +33,6 @@ public class Enemy_Stats : MonoBehaviour
         Text_Name = GameObject.Find("Stats_Enemy").transform.GetChild(3).GetComponent<TextMeshProUGUI>();
 
         instance = this;
-        Enemy_CurrentHP = Enemy_MaxHP;
-
-
     }
 
     private void Update()
@@ -39,7 +44,6 @@ public class Enemy_Stats : MonoBehaviour
             Enemy_CurrentHP = 0;
             isDead = true;
             gameManager.GetGold(Enemy_GoldValue);
-            
         }
     }
 

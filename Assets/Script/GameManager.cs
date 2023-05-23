@@ -6,7 +6,8 @@ using TMPro;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
-    //public static GameManager Instance;
+    public bool BacktoMain;
+    public static GameManager instance;
     public int Player_Gold;
     public TextMeshProUGUI PlayerGold;
     [SerializeField] public int Char_HP, Char_Atk, Char_Def, Char_Regen, Char_Timer, Char_GoldBonus, Char_Block, Char_Pierce, Char_WeakenEnemy;
@@ -16,9 +17,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button AtkUpg, HPUpg, DefUpg, RegenUpg, TimerUpg, GoldBonusUpg, BlockUpg, PierceUpg, WeakenEnemyUpg;
     private void Awake()
     {
-        //Instance = this;
-        DontDestroyOnLoad(this.gameObject);
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
+
     void Start()
     {
         Player_Gold = PlayerPrefs.GetInt("PlayerGold",0);
@@ -46,7 +55,6 @@ public class GameManager : MonoBehaviour
     {
         ButtonInteractable();
         TextUpdate();
-
     }
 
     public void clearplayerprefs()
@@ -173,12 +181,12 @@ public class GameManager : MonoBehaviour
     public void ChangeScene(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
+        if (BacktoMain == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void HealthPoint(int Amount)
-    {
-        Amount = Char_HP;
-    }
     public void HealthPointUpgrade()
     {
         if (Player_Gold >= (int)costHP)
@@ -192,10 +200,6 @@ public class GameManager : MonoBehaviour
         costHP *= 1.1f;
     }
 
-    public void AtkPower(int Amount)
-    {
-        Amount = Char_Atk * 2;
-    }
     public void AtkUpgrade()
     { 
         if(Player_Gold >= (int)costAtk)
@@ -209,10 +213,6 @@ public class GameManager : MonoBehaviour
         costAtk *= 1.1f;
     }
 
-    public void DefPower(int Amount)
-    {
-        Amount = Char_Def;
-    }
     public void DefUpgrade()
     {
         if (Player_Gold >= (int)costDef)
@@ -226,10 +226,6 @@ public class GameManager : MonoBehaviour
         costDef *= 1.12f;
     }
 
-    public void RegenHP(int Amount)
-    {
-        Amount += Char_Regen * 5;
-    }
     public void RegenUpgrade()
     {
         if (Player_Gold >= (int)costRegen)
@@ -247,6 +243,7 @@ public class GameManager : MonoBehaviour
     {
         Amount = 5 + Char_Timer;
     }
+    
     public void TimerUpgrade()
     {
         if (Player_Gold >= (int)costTimer)
@@ -262,9 +259,10 @@ public class GameManager : MonoBehaviour
 
     public void GetGold(int Amount)
     {
-        Player_Gold = Player_Gold + (int)(Amount * (1 + Char_GoldBonus * 0.02f));
+        Player_Gold = Player_Gold + Amount;
         PlayerPrefs.SetInt("PlayerGold", Player_Gold);
     }
+    
     public void GoldUpgrade()
     {
         if (Player_Gold >= (int)costGoldBonus)
@@ -278,10 +276,6 @@ public class GameManager : MonoBehaviour
         costGoldBonus *= 1.1f;
     }
 
-    public void PiercePower(float Amount)
-    {
-        Amount = 0.9f - Char_Pierce * 0.01f;
-    }
     public void PierceUpgrade()
     {
         if (Player_Gold >= (int)costPierce)
@@ -295,10 +289,6 @@ public class GameManager : MonoBehaviour
         costPierce *= 1.1f;
     }
 
-    public void BlockPower(float Amount)
-    {
-        Amount = 0.9f - Char_Block * 0.01f;
-    }
     public void BlockUpgrade()
     {
         if (Player_Gold >= (int)costBlock)
@@ -312,10 +302,6 @@ public class GameManager : MonoBehaviour
         costBlock *= 1.1f;
     }
     
-    public void WeakenEnemyPower(float Amount)
-    {
-        Amount = 0.9f - Char_Block * 0.01f;
-    }
     public void WeakenEnemyUpgrade()
     {
         if (Player_Gold >= (int)costWeakenEnemy)

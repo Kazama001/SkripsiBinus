@@ -11779,7 +11779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d054022258bb4ab76f2d3eb3aacb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BacktoMain: 0
   Player_Gold: 0
   PlayerGold: {fileID: 946972446}
   Char_HP: 0

@@ -158,7 +158,6 @@ public class BattleScript : MonoBehaviour
     public void getEnemyStats(Enemy_Stats enemystats)
     {
         enemyStats = enemystats;
-        print(enemystats.gameObject.name);
     }
 
     
