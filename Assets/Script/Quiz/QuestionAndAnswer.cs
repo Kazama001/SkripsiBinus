@@ -5,6 +5,7 @@ public class QuestionAndAnswer
     public string[] Answer;
     public int CurrentAnswer;
 }
+<<<<<<< HEAD
 
 [System.Serializable]
 public class AnswerOption
@@ -28,3 +29,5 @@ public class QuestionAndAnswerList
 {
     public QuestionAndAnswer2[] QnAList;
 }
+=======
+>>>>>>> cdcb1cf8a5db73c719c1686a84eac3e212e43f0e
