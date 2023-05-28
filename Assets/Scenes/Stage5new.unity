@@ -267,7 +267,7 @@ PrefabInstance:
     - target: {fileID: 6317578925029434746, guid: 7948cd9de24416f4a9800a1b01967762, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: d7f08df74b9540f40989007092cee066, type: 2}
+      objectReference: {fileID: -6478536213147159724, guid: 7948cd9de24416f4a9800a1b01967762, type: 3}
     - target: {fileID: 8603541622604761643, guid: 7948cd9de24416f4a9800a1b01967762, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -372,7 +372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &665609833
 Light:
   m_ObjectHideFlags: 0
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!1001 &1968289055
+--- !u!1001 &1663581710
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
