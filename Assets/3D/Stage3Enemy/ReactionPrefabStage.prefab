@@ -76,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6404665608066570783}
   - component: {fileID: 8558739935208223943}
+  - component: {fileID: 8420829253363237035}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -174,6 +175,22 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.015138894, y: -0.012579171, z: 0.0061203893}
     m_Extent: {x: 0.058308437, y: 0.06982456, z: 0.058184884}
   m_DirtyAABB: 0
+--- !u!111 &8420829253363237035
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483661162060829965}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: -203655887218126122, guid: eefadbb8ef65e134994847a2c66b5c53, type: 3}
+  m_Animations:
+  - {fileID: -203655887218126122, guid: eefadbb8ef65e134994847a2c66b5c53, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 1
 --- !u!1 &1761642575128008272
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +517,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4726865940694146954}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: -203655887218126122, guid: eefadbb8ef65e134994847a2c66b5c53, type: 3}
   m_Animations:
