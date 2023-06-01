@@ -19,6 +19,8 @@ public class QuizManager : MonoBehaviour
     [HideInInspector] public bool quizStarted, winStatus;
     private void Start()
     {
+
+
         randomQuestionIndex = Random.Range(0, question.Count);
         questionText[0].text = question[randomQuestionIndex];
 

@@ -18,7 +18,10 @@ public class BattleScript : MonoBehaviour
     [SerializeField] private float AreaTimer;
     private void Start()
     {
+        player_Movement = GameObject.Find("Character").GetComponent<Player_Movement>();
         gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
+        playerStats = GameObject.Find("Character").GetComponent<Player_Stats>();
+
         TimerSlider.maxValue = 5 + gameManager.Char_Timer - AreaTimer;
         TimerSlider.value = TimerSlider.maxValue;
         instance = this;
@@ -67,6 +70,7 @@ public class BattleScript : MonoBehaviour
         TimerActive = false;
         playerStats.DealDamagePierced(enemyStats.gameObject);
         Turn = "Enemy";
+        gameobject[1].SetActive(false);
         gameobject[2].SetActive(false);
         gameobject[3].SetActive(false);
         gameobject[4].SetActive(false);
@@ -79,6 +83,7 @@ public class BattleScript : MonoBehaviour
         TimerActive = false;
         playerStats.DealDamage(enemyStats.gameObject);
         Turn = "Enemy";
+        gameobject[1].SetActive(false);
         gameobject[2].SetActive(false);
         gameobject[3].SetActive(false);
         gameobject[4].SetActive(false);
@@ -88,13 +93,18 @@ public class BattleScript : MonoBehaviour
 
     public void Enemy_Correct()
     {
+        
         TimerActive = false;
         enemyStats.DealDamageBlocked(playerStats.gameObject);
         Turn = "Player";
+        gameobject[1].SetActive(false);
         gameobject[2].SetActive(false);
         gameobject[3].SetActive(false);
         gameobject[4].SetActive(false);
-        StartCoroutine(PlayerTurn());
+        if (playerStats.Player_CurrentHP > 0)
+        {
+            StartCoroutine(PlayerTurn());     
+        }
         StartCoroutine(EnemyAtkAnimation());
     }
 
@@ -103,15 +113,20 @@ public class BattleScript : MonoBehaviour
         TimerActive = false;
         enemyStats.DealDamage(playerStats.gameObject);
         Turn = "Player";
+        gameobject[1].SetActive(false);
         gameobject[2].SetActive(false);
         gameobject[3].SetActive(false);
         gameobject[4].SetActive(false);
-        StartCoroutine(PlayerTurn());
+        if (playerStats.Player_CurrentHP > 0)
+        {
+            StartCoroutine(PlayerTurn()); 
+        }
         StartCoroutine(EnemyAtkAnimation());
     }
     IEnumerator PlayerTurn()
     {
         yield return new WaitForSeconds(3.5f);
+        gameobject[1].SetActive(true);
         gameobject[2].SetActive(true);
         gameobject[3].SetActive(true);
         TimerSlider.value = TimerSlider.maxValue;
@@ -120,6 +135,7 @@ public class BattleScript : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         yield return new WaitForSeconds(5);
+        gameobject[1].SetActive(true);
         gameobject[2].SetActive(true);
         gameobject[4].SetActive(true);
         TimerSlider.value = TimerSlider.maxValue;

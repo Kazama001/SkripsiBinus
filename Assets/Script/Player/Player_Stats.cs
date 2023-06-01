@@ -11,10 +11,18 @@ public class Player_Stats : MonoBehaviour
     public int Player_MaxHP, Player_CurrentHP, Player_MP, Player_Atk, Player_Def, Player_Regen;
     [SerializeField] private int Player_HP_Shop, Player_Atk_Shop, Player_Def_Shop;
     [SerializeField] private float Player_Pierce, Player_Block;
-    public Slider Player_HPSlider, Player_MPSlider;
+    public Slider Player_HPSlider;
     public TextMeshProUGUI Text_HP, Text_Def, Text_Atk, Text_Gold;
+    public Animator Dies;
+
     private void Start()
     {
+        Player_HPSlider = GameObject.Find("HPBar").GetComponent<Slider>();
+        Text_HP = GameObject.Find("HPBar").transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        Text_Atk = GameObject.Find("Attack_Player").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        Text_Def = GameObject.Find("Defense_Player").transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        Text_Gold = GameObject.Find("Gold").transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        Dies = GameObject.Find("Died").GetComponent<Animator>();
         gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
         //GameManager.Instance.HealthPoint(Player_HP_Shop);
         //GameManager.Instance.AtkPower(Player_Atk_Shop);
@@ -36,6 +44,8 @@ public class Player_Stats : MonoBehaviour
         Player_Block = 1 - gameManager.Char_Block * 0.01f;
 
         status();
+
+        
         
         /*
         Player_HP   = 100   + Player_HP_Shop    * 2;
@@ -48,14 +58,23 @@ public class Player_Stats : MonoBehaviour
 
     private void Update()
     {
+
         status();
         if (Player_CurrentHP <= 0)
         {
-            Player_CurrentHP = 0;
-            //gameManager.ChangeScene("Main_noStart");
-            GameManager.instance.BacktoMain = true;
-            GameManager.instance.ChangeScene("Main_noStart");
+            StartCoroutine(Dead());
+            //gameManager.ChangeScene("Main_noStart");            
         }
+    }
+
+    IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(4.2f);
+        Dies.enabled=true;
+        Player_CurrentHP = 0;
+        yield return new WaitForSeconds(4.5f);
+        GameManager.instance.BacktoMain = true;
+        GameManager.instance.ChangeScene("Main_noStart");
     }
 
     public void status()
