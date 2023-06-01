@@ -58,8 +58,6 @@ public class Player_Stats : MonoBehaviour
         }
     }
 
-
-
     public void status()
     {
         Text_HP.text = Player_CurrentHP.ToString() + "/" + Player_MaxHP.ToString();
