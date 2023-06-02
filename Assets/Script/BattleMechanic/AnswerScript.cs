@@ -8,6 +8,11 @@ public class AnswerScript : MonoBehaviour
     public Manager Manager;
     public BattleScript battlescript;
 
+    private void Start()
+    {
+        Manager = 
+    }
+
     public void Answer()
     {
         if (battlescript.Turn == "Player")
