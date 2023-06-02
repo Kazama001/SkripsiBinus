@@ -66,7 +66,7 @@ public class Enemy_Stats : MonoBehaviour
     }
     public void TakeDamagePierced(int Amount, float pierce)
     {
-        Enemy_CurrentHP -= (int)(Amount - (Enemy_Def * pierce));
+        Enemy_CurrentHP -= (int)((Amount - Enemy_Def) * (1.1 + pierce));
     }
     public void DealDamage(GameObject target)
     {

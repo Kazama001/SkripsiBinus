@@ -44,12 +44,12 @@ public class GameManager : MonoBehaviour
         costHP = PlayerPrefs.GetFloat("costHP", 10);
         costAtk = PlayerPrefs.GetFloat("costAtk", 10);
         costDef = PlayerPrefs.GetFloat("costDef", 10);
-        costRegen = PlayerPrefs.GetFloat("costRegen", 30);
-        costTimer = PlayerPrefs.GetFloat("costTimer", 50);
-        costGoldBonus = PlayerPrefs.GetFloat("costGoldBonus", 100);
-        costBlock = PlayerPrefs.GetFloat("costBlock", 100);
-        costPierce = PlayerPrefs.GetFloat("costPierce", 100);
-        costWeakenEnemy = PlayerPrefs.GetFloat("costWeakenEnemy", 300);
+        costRegen = PlayerPrefs.GetFloat("costRegen", 50);
+        costTimer = PlayerPrefs.GetFloat("costTimer", 100);
+        costGoldBonus = PlayerPrefs.GetFloat("costGoldBonus", 75);
+        costBlock = PlayerPrefs.GetFloat("costBlock", 125);
+        costPierce = PlayerPrefs.GetFloat("costPierce", 125);
+        costWeakenEnemy = PlayerPrefs.GetFloat("costWeakenEnemy", 150);
     }
     void Update()
     {
@@ -236,7 +236,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CharRegen", Char_Regen);
             PlayerPrefs.SetInt("PlayerGold", Player_Gold);
         }
-        costRegen *= 1.1f;
+        costRegen *= 1.2f;
     }
 
     public void Timer(int Amount)
@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CharTimer", Char_Timer);
             PlayerPrefs.SetInt("PlayerGold", Player_Gold);
         }
-        costTimer *= 1.1f;
+        costTimer *= 1.3f;
     }
 
     public void GetGold(int Amount)
@@ -273,7 +273,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CharGoldBonus", Char_GoldBonus);
             PlayerPrefs.SetInt("PlayerGold", Player_Gold);
         }
-        costGoldBonus *= 1.1f;
+        costGoldBonus *= 1.3f;
     }
 
     public void PierceUpgrade()
@@ -286,7 +286,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CharPierce", Char_Pierce);
             PlayerPrefs.SetInt("PlayerGold", Player_Gold);
         }
-        costPierce *= 1.1f;
+        costPierce *= 1.3f;
     }
 
     public void BlockUpgrade()
@@ -299,7 +299,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CharBlock", Char_Block);
             PlayerPrefs.SetInt("PlayerGold", Player_Gold);
         }
-        costBlock *= 1.1f;
+        costBlock *= 1.3f;
     }
     
     public void WeakenEnemyUpgrade()
@@ -312,7 +312,7 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("CharWeakenEnemy", Char_WeakenEnemy);
             PlayerPrefs.SetInt("PlayerGold", Player_Gold);
         }
-        costWeakenEnemy *= 1.1f;
+        costWeakenEnemy *= 1.3f;
     }
 
 }

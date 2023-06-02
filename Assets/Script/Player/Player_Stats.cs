@@ -36,12 +36,12 @@ public class Player_Stats : MonoBehaviour
         Player_Atk_Shop = gameManager.Char_Atk * 2;
         Player_Atk = 10 + Player_Atk_Shop;
 
-        Player_Pierce = 1 - gameManager.Char_Pierce * 0.01f;
+        Player_Pierce = gameManager.Char_Pierce * 0.025f;
 
         Player_Def_Shop = gameManager.Char_Def;
         Player_Def = 5 + Player_Def_Shop;
 
-        Player_Block = 1 - gameManager.Char_Block * 0.01f;
+        Player_Block = 0.9f - gameManager.Char_Block * 0.025f;
 
         status();
 

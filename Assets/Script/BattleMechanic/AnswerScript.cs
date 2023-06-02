@@ -10,7 +10,7 @@ public class AnswerScript : MonoBehaviour
 
     private void Start()
     {
-        Manager = 
+
     }
 
     public void Answer()

@@ -22,7 +22,7 @@ public class BattleScript : MonoBehaviour
         gameManager = GameObject.Find("GameManagers").GetComponent<GameManager>();
         playerStats = GameObject.Find("Character").GetComponent<Player_Stats>();
 
-        TimerSlider.maxValue = 5 + gameManager.Char_Timer - AreaTimer;
+        TimerSlider.maxValue = 10 + gameManager.Char_Timer - AreaTimer;
         TimerSlider.value = TimerSlider.maxValue;
         instance = this;
         Turn = "Player";
