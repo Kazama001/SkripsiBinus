@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     {
         ButtonInteractable();
         TextUpdate();
+
     }
 
     public void clearplayerprefs()

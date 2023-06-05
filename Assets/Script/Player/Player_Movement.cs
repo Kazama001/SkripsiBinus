@@ -60,6 +60,13 @@ public class Player_Movement : MonoBehaviour
         if (other.tag == "CubeTurn")
         {
             run = "Belok";
+        } 
+        
+        if (other.tag == "CubeFinish")
+        {
+            GameManager.instance.BacktoMain = true;
+            GameManager.instance.ChangeScene("Main_noStart");
+            
         }
     }
 
