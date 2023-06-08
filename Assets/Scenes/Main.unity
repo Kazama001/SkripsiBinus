@@ -6591,6 +6591,7 @@ GameObject:
   - component: {fileID: 715215921}
   - component: {fileID: 715215920}
   - component: {fileID: 715215919}
+  - component: {fileID: 715215922}
   m_Layer: 5
   m_Name: txtStars
   m_TagString: Untagged
@@ -6671,7 +6672,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Difficulty
 --- !u!222 &715215921
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6680,6 +6681,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715215917}
   m_CullTransparentMesh: 1
+--- !u!114 &715215922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715215917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0848bff101191904ead4bb831f7084db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BlurFactor: 1
+  m_Style: 1
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0.49019608}
+  m_EffectDistance: {x: -5.7, y: 0.05}
+  m_UseGraphicAlpha: 1
 --- !u!1 &715583880
 GameObject:
   m_ObjectHideFlags: 0
@@ -7445,8 +7463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BlurFactor: 1
   m_Style: 1
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0.49019608}
+  m_EffectDistance: {x: -5.7, y: 0.05}
   m_UseGraphicAlpha: 1
 --- !u!114 &801527950
 MonoBehaviour:
@@ -15019,7 +15037,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047776609}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
